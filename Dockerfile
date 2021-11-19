@@ -17,6 +17,7 @@ LABEL maintainer="hello@mazzotta.me" \
 
 RUN apk --update add --no-cache \
    bash \
+   curl \
    jq \
    && rm -rf /var/cache/apk/*
 
