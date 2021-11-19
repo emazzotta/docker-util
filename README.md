@@ -2,7 +2,9 @@
 
 # Docker Util
 
-Simple alpine util docker container
+Simple alpine util docker container.
+
+Contains some packages, see [Dockerfile](./Dockerfile)
 
 ## Usage
 

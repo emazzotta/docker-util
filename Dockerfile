@@ -19,6 +19,7 @@ RUN apk --update add --no-cache \
    bash \
    curl \
    jq \
+   kubectl --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
    wget \
    && rm -rf /var/cache/apk/*
 
