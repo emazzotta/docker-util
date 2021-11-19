@@ -16,7 +16,6 @@ LABEL maintainer="hello@mazzotta.me" \
     org.label-schema.schema-version="1.0"
 
 RUN apk --update add --no-cache \
-   util \
+   jq \
    && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["util"]
