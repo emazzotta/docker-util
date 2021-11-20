@@ -1,4 +1,4 @@
-# docker-openssl build file.
+# docker-util build file.
 #
 # All commands necessary to go from development to release candidate should be here.
 
@@ -14,8 +14,8 @@ build:
          --build-arg VCS_REF=$(git rev-parse --short HEAD) \
          --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
          --build-arg VERSION=latest \
-         -t emazzotta/docker-openssl .
+         -t emazzotta/docker-util .
 
 .PHONY: push
 push:
-	@docker push emazzotta/docker-openssl
+	@docker push emazzotta/docker-util
