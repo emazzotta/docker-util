@@ -19,6 +19,7 @@ RUN apk --update add --no-cache \
    bash \
    curl \
    jq \
+   unzip \
    wget \
    && rm -rf /var/cache/apk/*
 
