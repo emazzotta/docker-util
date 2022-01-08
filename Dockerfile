@@ -23,4 +23,3 @@ RUN apk --update add --no-cache \
    unzip \
    wget \
    && rm -rf /var/cache/apk/*
-
