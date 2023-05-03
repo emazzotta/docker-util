@@ -1,11 +1,11 @@
-name: docker-build-push
+name: build
 
 on:
   push:
     branches: main
 
 jobs:
-  docker:
+  docker-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
