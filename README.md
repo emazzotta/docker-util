@@ -1,3 +1,4 @@
+[![Build](https://github.com/emazzotta/docker-util/actions/workflows/build.yml/badge.svg)](https://github.com/emazzotta/docker-util/actions/workflows/build.yml)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat)](https://emanuelemazzotta.com/mit-license)
 
 # Docker Util
