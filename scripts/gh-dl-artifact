@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+#
+# This script downloads an asset from latest or specific Github release of a
+# private repo.
+#
+# PREREQUISITES
+#
+# curl, jq
+#
+# USAGE
+#     gh-dl-release <artifact_name> <save_path> <access_token> <repository>
+
+GITHUB_ARTIFACT_NAME="${1}"
+TOKEN="${3}"
+REPO="${4}"
+GITHUB="https://api.github.com"
+
+alias errcho='>&2 echo'
+
+function gh_curl() {
+  curl -H "Authorization: token $TOKEN" \
+       -H "Accept: application/vnd.github.v3.raw" \
+       "${@}"
+}
+
+artifact_dl_link=$(gh_curl -s "$GITHUB/repos/$REPO/actions/artifacts" | jq --arg GITHUB_ARTIFACT_NAME "$GITHUB_ARTIFACT_NAME" -r '[.artifacts[] | select(.name==$GITHUB_ARTIFACT_NAME)][0].archive_download_url')
+if [ "$artifact_dl_link" = "null" ]; then
+  errcho "ERROR: artifact not found"
+  exit 1
+fi;
+
+download_url=$(curl  -w "%{redirect_url}" -o /dev/null -s -H "Authorization: token $TOKEN" "${artifact_dl_link}")
+
+curl -s "${download_url}" -o "${2}"
