@@ -18,6 +18,7 @@ LABEL maintainer="hello@mazzotta.me" \
 RUN apk --update add --no-cache \
    bash \
    curl \
+   git \
    jq \
    sed \
    unzip \
